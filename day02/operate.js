@@ -48,3 +48,81 @@ let num3 = 5;
 num3++; // num3 += 1;
 console.log(num3++); // 사용 후 값을 1 증가 시킨다. => 후위 연산
 console.log(++num3); // 값을 1증가 시킨 후 사용한다.=> 전위 연산
+
+//======================================
+// 비교 연산자
+// 두 값을 비교하여 참 또는 거짓을 반환하는 연산자다.
+// 동등 연산자
+// 값이 같은지만 비교
+console.log("3 == '3' =>", 3 == '3'); // true
+// 동일 연산자
+// 값과 자료형이 같은지 비교
+console.log("3 === '3' =>", 3 === '3'); // false
+
+// 부등 연산자
+// !=, !==
+console.log(3 != 'a'); // true
+console.log(3 !== '3'); // true
+
+// 크기 비교
+// 이상, 이하
+console.log(3 <= 5); // 3이 5보다 작거나 같니?(이하이니?)
+console.log(3 >= 1); // 3이 1보다 크거나 같니?(이상이니?)
+
+// 초과, 미만
+console.log(3 < 5); // 3이 5보다 작니?(미만이니?)
+console.log(3 > 1); // 3이 1보다 크니?(초과이니?)
+
+// ===========================
+// 논리 연산자
+// AND, OR, NOT
+// 두 값의 true, false에 따라 그 결과를 true, false로 반환
+// AND
+// 두 값이 모두 true이면 true
+// 하나라도 false이면 false
+console.log(true && true); // true
+
+// OR
+// 둘 중 하나라도 true이면 true
+// 모두 false이면 false
+console.log(false || true); // true
+
+// NOT
+// 단항 연산자로, 값의 앞에 붙어서 해당 boolean값을
+// 반전시킨다.
+console.log(!true); // false
+console.log(!false); // true
+// console.log(!!true); // true
+
+// =============================
+// 삼항 연산자
+// 항이 세 개
+// 조건식의 결과에 따라 반환하는 값이 달라지는 연산자
+// 조건식 ? 참일 때 값 : 거짓일 때 값
+console.log(3 > 1 ? 30 : 10); // 30
+
+// 연산순위
+// 최우선 연산자
+// 단항 연산자
+// 이항 연산자
+// 삼항 연산자
+// 대입 연산자(할당 연산자)
+
+
+
+// 기타 연산자
+// 자료형 검사
+// typeof
+// 해당 변수 값의 자료형을 문자열 값으로 반환한다.
+let f = "Hello";
+console.log(typeof f); // "string"
+let n = 30;
+console.log(typeof n); // "number"
+// "boolean"
+
+// instanceof
+// 객체가 특정 클래스의 인스턴스 여부인지를 반환한다.
+// true/false
+// 배열/객체
+let arr = [1, 2, 3];
+console.log(arr instanceof Array); // true
