@@ -46,6 +46,10 @@ function Person(name, age) {
     this.age = age;
 }
 
+// prototype 프로퍼티에 접근하여
+// Person 프로토타입에 새로운 프로퍼티나 메서드를 추가할 수 있다.
+// 이렇게 추가된 정보는 Person을 객체화하는 모든 인스턴스에서
+// 동일하게 적용된다.
 Person.prototype.introduce = function() {
     console.log("hello", this.name, "입니다.\n"+
         "나이는 ", this.age, "입니다.");
@@ -53,3 +57,5 @@ Person.prototype.introduce = function() {
 
 let hong = new Person("홍길동", 30);
 hong.introduce();
+hong.address = "역삼역";
+console.log(hong.address);
