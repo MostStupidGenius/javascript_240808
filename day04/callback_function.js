@@ -11,6 +11,6 @@ function make_greet_text(name) {
     return name + " 안녕하세요.";
 }
 
-outter("홍길동", make_greet_text);
-// outter("홍길동", (name) => name + " 안녕하세요.");
+// outter("홍길동", make_greet_text);
+outter("홍길동", (name) => name + " 안녕하세요.");
 
