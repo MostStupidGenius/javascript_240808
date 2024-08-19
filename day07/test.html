@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div>
+        <p id="name">hong</p>
+        <div class="divTag bro1">bro01</div>
+        <div class="divTag bro2">bor02</div>
+    </div>
+</body>
+<script>
+    let name = document.getElementById("name");
+    console.log(name);
+
+    let bro1 = document.getElementsByClassName("divTag bro1");
+    console.log(bro1[0]);
+    let bro2 = document.getElementsByClassName("divTag bro2");
+    console.log(bro2[0]);
+</script>
+
+</html>

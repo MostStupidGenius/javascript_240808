@@ -24,13 +24,13 @@ console.log(Math.random());
 
 // .max(...vaules)
 // 주어진 여러 값들 중 가장 큰 값을 반환한다.
-// console.log(Math.);
+console.log(Math.max(1, 3, 5, 9.12));
 
+// .min(...vaules)
+// 주어진 여러 값들 중 가장 작은 값을 반환한다.
+console.log(Math.min(-2, 1, 3, 5, 9));
 
-
-
-
-// console.log(Math.);
-// console.log(Math.);
-// console.log(Math.);
-// console.log(Math.);
+// 제곱근
+// 주어진 숫자의 제곱근을 실수형으로 반환한다.
+// 결과값에 소수점이 없으면 정수형으로 반환된다.
+console.log(Math.sqrt(2));
