@@ -27,17 +27,24 @@ console.log(".", text.trim(), ".");
 
 console.log(text.trim()[0]);
 
-let trim_text = text.trim();
-for (let i = 0; i < trim_text.length; i++) {
-    const e = trim_text[i];
-    if(e >= 'a' && e <= 'z'){
-        // 소문자는 대문자로
-        trim_text[i] = e.toUpperCase();
-    } else if(e >= 'A' && e <= 'Z'){
-        // 대문자를 소문자로
-        trim_text[i] = e.toLowerCase();
-    }
-}
-console.log(trim_text);
+// let trim_text = text.trim();
+
+
+// let merged_text = "";
+// let gap = 'a'.charAt(0) - 'A'.charAt(0);
+
+// for (let i = 0; i < trim_text.length; i++) {
+//     const e = trim_text[i];
+
+//     if(e.charAt(0) >= 'a' && e.charAt(0) <= 'z'){
+//         // 소문자는 대문자로
+//         merged_text += (e.charAt(0) - gap);
+//     } else if(e.charAt(0) >= 'A' && e.charAt(0) <= 'Z'){
+//         // 대문자를 소문자로
+//         merged_text += e.toLowerCase();
+//     }
+//     console.log(trim_text[i]);
+// }
+// console.log(trim_text);
 
 
