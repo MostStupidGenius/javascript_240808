@@ -45,9 +45,27 @@
     // 없다면 추가한다.
     // red.classList.toggle("radius");
 
-    red.addEventListener("click", ()=>{
-        alert("빨간박스가 클릭되었습니다.");
+    // 전달되는 함수의 e라는 매개변수는
+    // 이벤트 객체를 의미한다.
+    red.addEventListener("click", (e)=>{
+        // alert("빨간박스가 클릭되었습니다.");
+        // e.currentTarget
+        // console.log(e.target);
+        // console.log(e.currentTarget);
+        let target = e.target;
+        target.classList.toggle("radius");
     });
+
+    blue.addEventListener("mouseover", (e)=>{
+        let target = e.target;
+        target.classList.toggle("radius");
+    });
+    
+    blue.addEventListener("mouseout", (e)=>{
+        let target = e.target;
+        target.classList.toggle("radius");
+    });
+
 
 
 </script>
