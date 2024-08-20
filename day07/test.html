@@ -8,8 +8,9 @@
 <body>
     <div>
         <p id="name">hong</p>
-        <div class="divTag bro1">bro01</div>
-        <div class="divTag bro2">bor02</div>
+        <div class="divTag bro1" id="bro1">bro01</div>
+        <div class="divTag bro2" id="bro2">bor02</div>
+        <a id="link" href="#"></a>
     </div>
 </body>
 <script>
@@ -20,6 +21,34 @@
     console.log(bro1[0]);
     let bro2 = document.getElementsByClassName("divTag bro2");
     console.log(bro2[0]);
+
+    let bro1E = document.getElementById("bro1");
+
+    let link = document.getElementById("link");
+
+    // .textContent
+    // 태그의 텍스트 내용을 접근하여 값을 바꾸거나 들고온다.
+    bro1[0].textContent = "텍스트 내용";
+
+    console.log(bro1[0].textContent);
+
+    // html 내용을 설정하거나 가져오는데,
+    // 태그를 입력하면 입력한 태그대로 html로 해석되어 출력된다.
+    bro2[0].innerHTML = "<p>추가된 태그</p>";
+    console.log(bro2[0].innerHTML); // html 문서 형식 그대로 들고온다.(태그까지 그대로 가져온다)
+
+    // setAttribute("속성명", "설정할 속성값");
+    // 해당 태그(요소)의 속성의 값을 설정한다.
+    link.setAttribute("href", "https://www.naver.com");
+    link.textContent = "naver";
+
+    // 전달한 속성의 값을 가져온다.
+    console.log(link.getAttribute("href"));
+
+    // 전달한 속성을 지운다.
+    link.removeAttribute("href");
+
+
 </script>
 
 </html>
