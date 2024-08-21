@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Event</title>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        div>div{
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+        }
+        .red {
+            background-color: rgb(251, 116, 116);
+        }
+        .blue {
+            background-color: rgb(87, 87, 255);
+        }
+        .radius {
+            border-radius: 30px;
+        }
+
+        #inputText {
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="red" id="red"></div>
+        <div class="blue" id="blue"></div>
+        <br>
+        <div>
+            <input type="text" name="" id="inputText">
+        </div>
+    </div>
+</body>
+<script>
+    // $(e).hover()
+    // 두 개의 콜백함수를 전달하여
+    // 마우스를 올렸을 때와 뗄 때 두 가지 각각의 상태가 되었을 때
+    // 처리한 이벤트 코드를 정의할 수 있다.
+    const red = $('#red');
+    if(red){
+        console.log(red);
+        // 마우스 포인터가 요소를 진입했을 때
+        let enterEvent = (e)=>{
+            console.log(e.target);
+            $(e.target).css('background-color', 'black');
+        };
+        
+        // 마우스 포인터가 요소를 떠났을 때
+        let leaveEvent = (e)=>{
+            console.log(e.target);
+            // 배경색 없애기
+            $(e.target).css('background-color', '');
+        }
+    
+        // hover 이벤트에 처리할 콜백함수 전달
+        red.hover(enterEvent, leaveEvent);
+    }
+    
+    // $(e).focus()
+    // $(e).blur()
+    // 각각 콜백함수를 하나 전달하여
+    // form 요소가 포커스를 받을 때와 잃을 때에 대한 처리할 이벤트 코드를 정의할 수 있다.
+    const input = $('#inputText');
+    input.focus((e)=>{
+        $(e.target).css('border', 'solid 1px');
+    });
+
+    input.blur((e)=>{
+        $(e.target).css('border', '');
+    })
+
+
+    
+    
+    $(document).ready(()=>{
+        // console.log(red);
+    });
+
+
+
+</script>
+</html>
