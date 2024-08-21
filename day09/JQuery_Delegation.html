@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 위임</title>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./jquery_example.css">
+</head>
+
+<body>
+    <div>
+        <div class="red" id="red">
+            <div class="blue child" id="blueChild"></div>
+        </div>
+        <div class="blue" id="blue"></div>
+        <div class="red" id="red2"></div>
+        <br>
+        <div>
+            <input type="text" name="" id="inputText">
+        </div>
+    </div>
+</body>
+<script>
+    // 이벤트 위임(Event Delegation)
+    // $(상위요소).on(이벤트, 하위요소 선택자, 이벤트 처리코드()=>{})
+    // 상위 요소 아래에 있는 하위요소들을 선택하여,
+    // 일괄적으로 이벤트 처리 코드를 추가하는 방법이다.
+    // 여기서 주목할 점은, 동적으로 생성된 하위요소에도 적용된다는 점이다.
+    let red = $('#red');
+    let blue = $('#blue');
+    let red2 = $('#red2');
+
+    // red 요소를 클릭할 때마다
+    // 하위 요소로 div 태그가 동적으로 추가되는 코드
+    red.click(e => {
+        // $(e.currentTarget).add(`<div class="blue child"></div>`);
+        $(e.currentTarget).append(`<div class="blue child"></div>`)
+    });
+
+    // 우클릭을 할 때마다
+    // 기본 우클릭 기능의 실행을 막고
+    // red 요소의 하위 요소 중 가장 마지막 요소를 지우는 기능 수행.
+    red.on('contextmenu', e => {
+        e.stopPropagation(); // 기본 우클릭 기능을 막기 -> 현재 안 되는 이유 찾는 중
+        $(e.currentTarget).children().last().remove();
+    });
+
+    // red의 하위 요소 중, div 요소들을 클릭할 때마다
+    // 실행되는 코드
+    red.on('click', 'div', (e) => {
+        e.stopPropagation();
+        let target = e.target;
+        // console.log(target);
+        $(target).toggleClass('yellow');
+    });
+
+    blue.hover(
+    // blue 요소에 대해서
+    e => {
+        // 마우스를 올리면 서서히 작아져 사라진다.
+        // 전달하는 값은 정수값으로, 
+        // 사라지거나 나타날 때의 속도를 지정할 수 있으며
+        // 그 값은 밀리초를 기준으로 한다(1000ms == 1s)
+        // $(e.target).hide(1000);
+        
+        // fadeOut()
+        // 서서히 투명해진다.
+        $(e.target).fadeOut(1000);
+    },
+    e => {
+        $(e.target).show(1000);
+    });
+
+    red2.click(e => {
+        $(e.target).animate(
+            {
+                opacity: 0.5,
+                height: '10px'
+            },
+            2000, // 애니메이션이 완료될 때까지 걸리는 시간
+            'swing', // 
+            () => {
+                // red2.toggleClass('black');
+            }
+        );
+        // $(e.target).delay(1000);
+        
+    });
+
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+div>div{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+}
+.red {
+    background-color: rgb(251, 116, 116);
+}
+.blue {
+    background-color: rgb(87, 87, 255);
+}
+.radius {
+    border-radius: 30px;
+}
+
+#inputText {
+    outline: none;
+    border: none;
+}
+
+.blue.child {
+    width: 50%;
+    height: 50%;
+}
+
+.yellow {
+    background-color: yellow !important;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Bubbling</title>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./jquery_example.css">
+    <style>
+        .blue.child {
+            width: 50%;
+            height: 50%;
+        }
+
+        .black {
+            background-color: black !important;
+        }
+
+        .yellow {
+            background-color: yellow !important;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="red" id="red">
+            <div class="blue child" id="blueChild"></div>
+        </div>
+        <div class="blue" id="blue"></div>
+        <br>
+        <div>
+            <input type="text" name="" id="inputText">
+        </div>
+    </div>
+</body>
+<script>
+    let blueChild = $("#blueChild");
+    let redPr = $("#red");
+
+    blueChild.click((e)=>{
+        // console.log("clicked");
+        // e.stopPropagation(); // 버블링 중단
+        $(e.currentTarget).toggleClass('black');
+    });
+
+    redPr.click((e)=>{
+        $(e.currentTarget).toggleClass('yellow');
+    });
+
+</script>
+</html>
